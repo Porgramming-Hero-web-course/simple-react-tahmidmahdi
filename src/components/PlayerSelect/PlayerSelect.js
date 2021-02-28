@@ -1,0 +1,30 @@
+import React from 'react';
+import PlayerData from '../PlayerData/PlayerData';
+// import playerData from '../playerData/playerData';
+// import playerData from '../PlayerData/PlayerData';
+
+const PlayerSelect = (props) => {
+    const cart = props.cart
+    console.log('cart', cart);
+    let newSalary = 0;
+    for (let i = 0; i < cart.length; i++) {
+        const element = cart[i].salary;
+        newSalary = element + newSalary;
+    }
+    return (
+        <div className='player-select'>
+            <div>
+                <h1>Total Selected Players: {cart.length}</h1>
+                <h5>Total Salary: {newSalary}</h5>
+
+            </div>
+            <div>
+                {
+                    cart.map(player => <PlayerData player={player}></PlayerData>)   
+                }
+            </div>
+        </div>
+    );
+};
+
+export default PlayerSelect;
