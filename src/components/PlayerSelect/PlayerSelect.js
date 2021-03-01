@@ -12,8 +12,8 @@ const PlayerSelect = (props) => {
         newSalary = element + newSalary;
     }
     return (
-        <div className='player-select'>
-            <div>
+        <div >
+            <div className='player-select'>
                 <h1>Total Selected Players: {cart.length}</h1>
                 <h5>Total Salary: {newSalary}</h5>
 
